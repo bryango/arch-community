@@ -1,10 +1,11 @@
 # Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
 
 pkgname=gnome-shell-extension-appindicator
+epoch=1 # [p13n] fork
 pkgver=42
 pkgrel=1
 pkgdesc='AppIndicator/KStatusNotifierItem support for GNOME Shell'
-url='https://github.com/ubuntu/gnome-shell-extension-appindicator'
+url='https://github.com/bryango/gnome-shell-extension-appindicator'
 arch=('any')
 license=('GPL')
 depends=('gnome-shell>=3.34')
@@ -13,17 +14,17 @@ optdepends=(
   'libappindicator-gtk2: support GTK+2 applications'
   'libappindicator-gtk3: support GTK+3 applications'
 )
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/ubuntu/${pkgname}/archive/v${pkgver}.tar.gz")
-sha256sums=('cdcff9ead4ae043e7ac0021fb46ed473822c237fb78ce49de261e860775dd18a')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/bryango/${pkgname}/archive/master.tar.gz")
+sha256sums=('SKIP')
 
 build() {
-  cd "${pkgname}-${pkgver}"
+  cd "${pkgname}-master"
   meson --prefix=/usr build/
   ninja -C build/
 }
 
 package() {
-  cd "${pkgname}-${pkgver}"
+  cd "${pkgname}-master"
   DESTDIR="${pkgdir}" ninja -C build/ install
   # this file is generated at pkg install time
   rm "${pkgdir}/usr/share/glib-2.0/schemas/gschemas.compiled"
