@@ -2,12 +2,12 @@
 
 pkgname=gnome-shell-extension-appindicator
 epoch=1 # [p13n] fork
-pkgver=42
+pkgver=53
 pkgrel=1
 pkgdesc='AppIndicator/KStatusNotifierItem support for GNOME Shell'
 url='https://github.com/bryango/gnome-shell-extension-appindicator'
 arch=('any')
-license=('GPL')
+license=('GPL-2.0-or-later')
 depends=('gnome-shell>=3.34')
 makedepends=('meson' 'jq')
 optdepends=(
