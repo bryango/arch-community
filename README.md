@@ -1,5 +1,7 @@
 # Arch `community` package forks
 
+**Note:** Arch upstream has moved to gitlab for packaging. Forked packages will hence be managed at https://gitlab.archlinux.org/bryango. Note that one has to add the proper commit email at https://gitlab.archlinux.org/-/profile/emails in able to push there. This repo is hence deprecated. 
+
 This repo hosts forked branches of the Arch `community` repo. Branches:
 
 - user mods are applied on `packages/*/trunk`, tracking upstream changes
